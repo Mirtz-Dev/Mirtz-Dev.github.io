@@ -1,4 +1,4 @@
-﻿import { iniciarParticulas } from './particulas.js?v=38';
+﻿import { iniciarParticulas } from './particulas.js?v=39';
 
 // ---------- Configuração (preencher antes de publicar) ----------
 const CONFIG = {
@@ -253,14 +253,12 @@ async function montarParticulas() {
 }
 
 // ---------- A: foto do Shiro — pedido de geração que falha ("pessoa real detectada") e revela a foto ----------
-// Protótipos: ?foto=rolagem (avança com a rolagem, padrão) · ?foto=auto (roda sozinho ao carregar).
 const FOTO_TEXTOS = {
   pt: { prompt: 'gerar retrato: Alisson Martins, IA Creator, luz de estúdio, fundo escuro, 8k',
     gerando: 'gerando', erro: 'error 404 · real_human_detected' },
   en: { prompt: 'generate portrait: Alisson Martins, AI Creator, studio light, dark background, 8k',
     gerando: 'generating', erro: 'error 404 · real_human_detected' },
 };
-const variante = new URLSearchParams(location.search).get('foto') === 'auto' ? 'auto' : 'rolagem';
 const fotoA = document.querySelector('#quem .foto-a');
 let tx = FOTO_TEXTOS[idioma];
 fotoA.classList.add('v-prompt');
@@ -281,7 +279,7 @@ function mostrarErro(ligado) {
   status.classList.toggle('erro', ligado);
   if (ligado) status.textContent = tx.erro;
 }
-// O pedido é digitado sozinho ao carregar (para a tela não ficar parada); o resto depende da versão.
+// O pedido é digitado sozinho ao carregar (para a tela não ficar parada); o resto anda com a rolagem.
 const digitar = gsap.to({}, { duration: tx.prompt.length * 0.03, delay: 1.2, ease: 'none',
   onUpdate() { digitado.textContent = tx.prompt.slice(0, Math.round(this.progress() * tx.prompt.length)); } });
 // Troca PT/EN: o pedido, o status e o erro acompanham o idioma do site.
@@ -291,17 +289,8 @@ function traduzirPrompt() {
   status.textContent = emErro ? tx.erro : `${tx.gerando} · ${Math.round(parseFloat(barra.style.width) || 0)}%`;
 }
 
-if (variante === 'auto') {
-  const prog = { v: 0 };
-  gsap.timeline({ delay: 1.2 + tx.prompt.length * 0.03 })
-    .to(prog, { v: 63, duration: 1.6, ease: 'power1.in', onUpdate: () => mostrarProgresso(prog.v) }, '+=0.3')
-    .add(() => mostrarErro(true))
-    .to(caixa, { opacity: 0, y: -10, filter: 'blur(6px)', duration: 0.6 }, '+=1.6')
-    .fromTo(fotoBase, { opacity: 0, scale: 1.04, filter: 'blur(12px)' },
-      { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 1.1, ease: 'power2.out' }, '-=0.2');
-} else {
-  // Com a rolagem: a barra enche, trava no erro e a foto aparece — e tudo volta se a pessoa rolar para cima.
-  document.getElementById('quem').classList.add('a-longa');
+// Com a rolagem: a barra enche, trava no erro e a foto aparece — e tudo volta se a pessoa rolar para cima.
+{
   const lim = (v) => Math.min(1, Math.max(0, v));
   let erroLigado = false;
   gsap.ticker.add(() => {
@@ -315,13 +304,6 @@ if (variante === 'auto') {
     gsap.set(fotoBase, { opacity: r, scale: 1.04 - 0.04 * r, filter: `blur(${12 * (1 - r)}px)` });
   });
 }
-// Seletor temporário para o Shiro comparar as versões.
-document.body.insertAdjacentHTML('beforeend', `<nav class="troca-prototipo" aria-label="Protótipos da foto">
-  ${[['rolagem', 'A · Com rolagem'], ['auto', 'B · Automático']].map(([v, n]) =>
-    `<button type="button" data-v="${v}" class="${v === variante ? 'ativo' : ''}">${n}</button>`).join('')}</nav>`);
-document.querySelectorAll('.troca-prototipo button').forEach((b) => b.addEventListener('click', () => {
-  const u = new URL(location.href); u.searchParams.set('foto', b.dataset.v); location.href = u;
-}));
 
 // Entradas de texto
 // Entrada do título: espera as partículas ficarem prontas (ou 1,2 s) para não disputar o processador.
@@ -353,7 +335,7 @@ function glitchTitulos() {
 if (!movimentoReduzido) setTimeout(glitchTitulos, 3500);
 gsap.to('#quem .bloco-texto, #quem .foto-a', {
   opacity: 0, y: -60, filter: 'blur(10px)', ease: 'none',
-  scrollTrigger: { trigger: '#quem', start: () => (variante === 'rolagem' ? '86% bottom' : '65% bottom'), end: 'bottom bottom', scrub: true },
+  scrollTrigger: { trigger: '#quem', start: '86% bottom', end: 'bottom bottom', scrub: true },
 });
 gsap.timeline({ scrollTrigger: { trigger: '#ruido', start: 'top 70%', end: 'bottom bottom', scrub: true } })
   .from('#ruido .bloco-texto > *', { y: 40, opacity: 0, filter: 'blur(8px)', stagger: 0.1, duration: 0.3 })

@@ -94,7 +94,7 @@ main { position: relative; z-index: 2; }
 /* Cenas */
 .cena { position: relative; }
 .cena-alta { height: 260vh; }
-#quem { height: 175vh; }   /* a foto aparece e já passa para a próxima parte */
+#quem { height: 280vh; }   /* espaço para o pedido digitar → gerar → dar erro → revelar a foto */
 #ruido { height: 150vh; }
 #idiomas { margin-top: -100vh; }   /* sobrepõe o fim de B para a troca cruzada (ver main.js) */
 .cena-muito-alta { height: 360vh; }
@@ -133,9 +133,8 @@ main { position: relative; z-index: 2; }
 @keyframes seta { 0%, 100% { transform: scaleY(0.3); } 50% { transform: scaleY(1); } }
 
 /* A · Foto do Shiro: pedido de geração que falha e revela a foto (o JS monta o conteúdo) */
-#quem.a-longa { height: 280vh; }   /* versão com rolagem: espaço para digitar → gerar → erro → foto */
 .foto-a {
-  position: relative; justify-self: center; width: min(78vh, 42vw); aspect-ratio: 1; isolation: isolate;
+  position: relative; justify-self: start; margin-left: -6vw; width: min(78vh, 42vw); aspect-ratio: 1; isolation: isolate;
   -webkit-mask-image: radial-gradient(ellipse 50% 56% at 50% 46%, #000 72%, transparent 100%);
           mask-image: radial-gradient(ellipse 50% 56% at 50% 46%, #000 72%, transparent 100%);
 }
@@ -161,14 +160,6 @@ main { position: relative; z-index: 2; }
   0%, 30%, 60% { background: rgba(255, 59, 78, .28); box-shadow: 0 0 40px rgba(255, 59, 78, .55); }
   15%, 45%, 100% { background: rgba(10, 15, 20, .85); box-shadow: 0 0 24px rgba(255, 59, 78, .3); }
 }
-/* Seletor temporário para comparar os protótipos */
-.troca-prototipo {
-  position: fixed; left: 50%; bottom: 14px; translate: -50% 0; z-index: 20; display: flex; gap: 6px; padding: 6px;
-  border: 1px dashed var(--magenta); border-radius: 999px; background: rgba(5, 7, 10, .9);
-  font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-}
-.troca-prototipo button { padding: 6px 12px; border-radius: 999px; color: var(--tinta-2); }
-.troca-prototipo button.ativo { background: var(--magenta); color: var(--bg); }
 
 /* B · HUD flutuante */
 .hud-flutuante { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; pointer-events: none; }
@@ -342,7 +333,7 @@ main { position: relative; z-index: 2; }
   .lead { font-size: 14px; margin-bottom: 12px; }
   #quem .palco, #ruido .palco { align-items: end; grid-template-rows: 1fr; padding-bottom: 60px; }
   #quem .palco { grid-template-rows: auto 1fr; }
-  #quem .foto-a { order: -1; width: min(86vw, 44vh); }
+  #quem .foto-a { order: -1; width: min(86vw, 44vh); justify-self: center; margin-left: 0; }
   .prompt-caixa { left: 6%; right: 6%; font-size: 11px; padding: 12px 14px; }
   .hud-flutuante li { font-size: 8px; }
   .vitrine-quadro { width: min(250px, 60vw); max-height: 52vh; }
