@@ -1,0 +1,27 @@
+﻿// Gerado por tools/preparar-midia.ps1
+window.FEED = [
+  { id: '01', tipo: 'homens' },
+  { id: '02', tipo: 'homens' },
+  { id: '03', tipo: 'homens' },
+  { id: '04', tipo: '50+' },
+  { id: '05', tipo: '50+' },
+  { id: '06', tipo: '50+' },
+  { id: '07', tipo: '50+' },
+  { id: '08', tipo: '50+' },
+  { id: '09', tipo: '50+' },
+  { id: '10', tipo: 'mulheres' },
+  { id: '11', tipo: 'mulheres' },
+  { id: '12', tipo: 'mulheres' },
+  { id: '13', tipo: 'mulheres' },
+  { id: '14', tipo: 'mulheres' },
+  { id: '15', tipo: 'mulheres' },
+  { id: '16', tipo: '3d' },
+  { id: '17', tipo: '3d' },
+  { id: '18', tipo: '3d' },
+  { id: '19', tipo: '3d' },
+  { id: '20', tipo: 'historias' },
+  { id: '21', tipo: 'historias' },
+  { id: '22', tipo: 'historias' },
+  { id: '23', tipo: 'historias' },
+  { id: '24', tipo: 'historias' }
+];
