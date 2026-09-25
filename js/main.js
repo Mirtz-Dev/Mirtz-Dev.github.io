@@ -1,4 +1,3 @@
-﻿import { iniciarParticulas } from './particulas.js?v=40';
 
 // ---------- Configuração (preencher antes de publicar) ----------
 const CONFIG = {
@@ -10,18 +9,16 @@ const CONFIG = {
 // ---------- Textos PT / EN ----------
 const TEXTOS = {
   pt: {
-    'cap.quem': 'Quem cria', 'cap.ruido': 'Do ruído ao rosto', 'cap.idiomas': 'Cinco idiomas', 'cap.numeros': 'Volume',
+    'cap.quem': 'Quem cria', 'cap.idiomas': 'Cinco idiomas', 'cap.numeros': 'Volume',
     'cap.trabalhos': 'Trabalhos', 'cap.produto': 'Seu produto', 'cap.servicos': 'O que eu faço', 'cap.contato': 'Contato',
-    'nav.contato': 'Contato', 'hud.funcao': 'IA Creator · Direct Response',
-    'a.cargo': 'IA Creator · Direct Response',
+    'nav.contato': 'Contato', 'hud.funcao': 'IA Creator',
+    'a.cargo': 'IA Creator',
     'a.lead': 'Crio avatares, vozes e cenas com IA para VSLs, leads, upsells e anúncios — em cinco idiomas. E construo as automações que aceleram tudo isso.',
-    'a.rolar': 'Role para gerar',
-    'b.titulo': 'Do ruído ao rosto',
-    'b.lead': 'Toda imagem gerada começa como ruído. Cada passo tira um pouco do caos, até sobrar alguém que nunca existiu.',
+    'a.rolar': 'Role para ver mais',
     'c.titulo': 'Um rosto. Cinco idiomas.',
     'c.lead': 'A mesma personagem vende em inglês, alemão, francês, italiano e português. Repare no que acontece quando ela vira de costas.',
     'c.som': 'Ativar som', 'c.som-on': 'Som ligado', 'c.previa': 'Prévia · vídeo final em produção',
-    'd.criativos': 'criativos criados', 'd.anos': 'anos em Direct Response', 'd.idiomas': 'idiomas', 'd.formatos': 'formatos',
+    'd.criativos': 'criativos criados', 'd.anos': 'anos de experiência', 'd.idiomas': 'idiomas', 'd.formatos': 'formatos',
     'e.titulo': 'Trabalhos',
     'e.lead': 'Avatares, inserts 3D e histórias feitos para ofertas reais.',
     'e.f.todos': 'Todos', 'e.f.homens': 'Homens', 'e.f.mulheres': 'Mulheres', 'e.f.historias': 'Histórias',
@@ -30,24 +27,22 @@ const TEXTOS = {
     'g.titulo': 'O que eu faço',
     'h.titulo': 'Vamos escalar a próxima oferta?', 'h.cta': 'Entre em contato',
     'h.nota': 'Vaga, freela ou projeto: me manda um e-mail e a gente conversa.',
-    'h.faixa': 'IA Creator · Direct Response · EN · DE · FR · IT · PT · +2.000 criativos · ', 'h.carregou': 'esta página carregou em', 'h.direitos': 'Todos os direitos reservados',
+    'h.faixa': 'IA Creator · EN · DE · FR · IT · PT · +2.000 criativos · ', 'h.carregou': 'esta página carregou em', 'h.direitos': 'Todos os direitos reservados',
     'h.assunto': 'Contato pelo site — Alisson Martins',
     'h.corpo': 'Olá, Alisson! Vi seu site e gostaria de conversar.\n\nEmpresa:\nVaga/projeto:\n',
     'h.embreve': 'em breve',
   },
   en: {
-    'cap.quem': 'The creator', 'cap.ruido': 'Noise to face', 'cap.idiomas': 'Five languages', 'cap.numeros': 'Volume',
+    'cap.quem': 'The creator', 'cap.idiomas': 'Five languages', 'cap.numeros': 'Volume',
     'cap.trabalhos': 'Work', 'cap.produto': 'Your product', 'cap.servicos': 'What I do', 'cap.contato': 'Contact',
-    'nav.contato': 'Contact', 'hud.funcao': 'AI Creator · Direct Response',
-    'a.cargo': 'AI Creator for Direct Response',
+    'nav.contato': 'Contact', 'hud.funcao': 'AI Creator',
+    'a.cargo': 'AI Creator',
     'a.lead': 'I create AI avatars, voices and scenes for VSLs, leads, upsells and ads — in five languages. And I build the automations that speed it all up.',
-    'a.rolar': 'Scroll to generate',
-    'b.titulo': 'From noise to face',
-    'b.lead': 'Every generated image starts as noise. Each step removes a little chaos, until someone who never existed is left.',
+    'a.rolar': 'Scroll for more',
     'c.titulo': 'One face. Five languages.',
     'c.lead': 'The same character sells in English, German, French, Italian and Portuguese. Watch what happens when she turns around.',
     'c.som': 'Turn sound on', 'c.som-on': 'Sound on', 'c.previa': 'Preview · final video in production',
-    'd.criativos': 'creatives produced', 'd.anos': 'years in direct response', 'd.idiomas': 'languages', 'd.formatos': 'formats',
+    'd.criativos': 'creatives produced', 'd.anos': 'years of experience', 'd.idiomas': 'languages', 'd.formatos': 'formats',
     'e.titulo': 'Work',
     'e.lead': 'Avatars, 3D inserts and stories made for real offers.',
     'e.f.todos': 'All', 'e.f.homens': 'Men', 'e.f.mulheres': 'Women', 'e.f.historias': 'Stories',
@@ -56,7 +51,7 @@ const TEXTOS = {
     'g.titulo': 'What I do',
     'h.titulo': 'Ready to scale your next offer?', 'h.cta': 'Get in touch',
     'h.nota': 'Job, freelance or project: send me an email and let’s talk.',
-    'h.faixa': 'AI Creator · Direct Response · EN · DE · FR · IT · PT · 2,000+ creatives · ', 'h.carregou': 'this page loaded in', 'h.direitos': 'All rights reserved',
+    'h.faixa': 'AI Creator · EN · DE · FR · IT · PT · 2,000+ creatives · ', 'h.carregou': 'this page loaded in', 'h.direitos': 'All rights reserved',
     'h.assunto': 'Contact from website — Alisson Martins',
     'h.corpo': 'Hi Alisson! I saw your website and would like to talk.\n\nCompany:\nRole/project:\n',
     'h.embreve': 'soon',
@@ -184,126 +179,118 @@ document.querySelectorAll('[data-split]').forEach((el) => {
     : [...parte].map((c) => `<span class="letra">${c === ' ' ? '&nbsp;' : c}</span>`).join('')).join('');
 });
 
-// ---------- A e B: partículas ----------
-const hud = document.getElementById('hud-leitura');
-const hudSteps = document.getElementById('hud-steps');
-function escreverHud(steps) {
-  const s = String(Math.round(steps)).padStart(2, '0');
-  hud.textContent = `SEED 4821 · STEP ${s}/30`;
-  if (hudSteps) hudSteps.textContent = `STEPS · ${s}/30`;
+// ---------- A: vídeo da Hanna — o pedido aparece pronto e a pessoa clica em "Gerar" ----------
+// O clique libera o som (o navegador só deixa tocar com áudio depois de uma interação): carrega rápido e ela já fala.
+const HERO_TEXTOS = {
+  pt: { prompt: 'gerar vídeo: Hanna, UGC, 1 avatar → 5 idiomas, voz nativa, 9:16', botao: 'Gerar', gerando: 'gerando', pronto: 'pronto · 5 idiomas' },
+  en: { prompt: 'generate video: Hanna, UGC, 1 avatar → 5 languages, native voice, 9:16', botao: 'Generate', gerando: 'generating', pronto: 'done · 5 languages' },
+};
+const heroQuadro = document.querySelector('.hero-quadro');
+const heroVideo = heroQuadro.querySelector('.hero-midia');
+const botaoSomHero = document.querySelector('.hero-video .botao-som');
+let tx = HERO_TEXTOS[idioma];
+heroQuadro.insertAdjacentHTML('beforeend', `<div class="prompt-caixa"><p class="prompt-linha"><span class="digitado"></span><span class="cursor"></span></p>
+  <div class="prompt-barra"><span></span></div>
+  <div class="prompt-rodape"><p class="prompt-status"></p><button class="botao-gerar" type="button"></button></div></div>`);
+const caixa = heroQuadro.querySelector('.prompt-caixa'), digitado = heroQuadro.querySelector('.digitado');
+const barra = heroQuadro.querySelector('.prompt-barra span'), status = heroQuadro.querySelector('.prompt-status');
+const botaoGerar = heroQuadro.querySelector('.botao-gerar');
+let progresso = 0, gerando = false, pronto = false, heroNaTela = true;
+function mostrarProgresso(v) {
+  progresso = v;
+  barra.style.width = `${v}%`;
+  status.textContent = pronto ? tx.pronto : gerando ? `${tx.gerando} · ${Math.round(v)}%` : '';
 }
-
-let campo = null;
-async function montarParticulas() {
-  if (movimentoReduzido) return;
-  try {
-    campo = await iniciarParticulas(document.getElementById('particulas'), ['media/foto.jpg', 'media/avatar-retrato.jpg']);
-  } catch (erro) {
-    console.warn('Partículas desativadas:', erro);
-    document.documentElement.classList.add('sem-webgl');
-    return;
-  }
-  window.__campo = campo;
-
-  // Estado das partículas como função pura da rolagem — um só lugar decide t e opacidade;
-  // particulas.js suaviza a chegada ao alvo.
-  const lim = (v) => Math.min(1, Math.max(0, v));
-  const faixa = (y, de, ate) => lim((y - de) / (ate - de));
-  function atualizar() {
-    const y = window.scrollY, vh = window.innerHeight;
-    const q = document.getElementById('quem'), r = document.getElementById('ruido');
-    const c = document.getElementById('idiomas'), n = document.getElementById('numeros');
-    let tAlvo, op = 1;
-    // B começa assim que o texto de A termina de sumir (fim de #quem) e a Hanna fica pronta a 60% de #ruido.
-    const pRuido = faixa(y, q.offsetTop + q.offsetHeight - vh, r.offsetTop + r.offsetHeight * 0.6 - vh);
-    // A Hanna se desfaz enquanto C sobe (troca cruzada com a vitrine, sem tela vazia no meio).
-    const fimB = r.offsetTop + r.offsetHeight - vh;
-    const pSome = faixa(y, fimB - vh * 0.4, fimB);
-    const pNum = faixa(y, n.offsetTop - vh, n.offsetTop + n.offsetHeight);
-    // Depois da vitrine as partículas somem de vez (o túnel do D já é o fundo).
-    if (pSome > 0 || pNum > 0) { tAlvo = 3 + 0.8 * pSome; op = 1 - pSome; }   // rosto vira poeira e some
-    // As partículas só existem em B: nascem do ruído (t = 2) e viram a Hanna (t = 3). Em A ficam invisíveis.
-    else { tAlvo = 2 + pRuido; op = lim(pRuido * 4); }
-    campo.alvoT = tAlvo;
-    campo.alvoOpacidade = op;
-    escreverHud(tAlvo <= 1 ? tAlvo * 30 : lim(tAlvo - 2) * 30);
-  }
-  lenis.on('scroll', atualizar);
-  window.addEventListener('resize', atualizar);
-  atualizar();
-
-  // Foto real da Hanna: aparece quando o rosto de partículas termina de se formar.
-  const fotoHanna = document.getElementById('rosto-hanna');
-  const suave = (v, a, b) => { const x = lim((v - a) / (b - a)); return x * x * (3 - 2 * x); };
-  function posicionarFotos() {
-    const r = campo.rostoNaTela();
-    fotoHanna.style.width = fotoHanna.style.height = `${r.lado}px`;
-    fotoHanna.style.left = `${r.cx - r.lado / 2}px`;
-    fotoHanna.style.top = `${r.cy - r.lado / 2}px`;
-  }
-  posicionarFotos();
-  window.addEventListener('resize', posicionarFotos);
-  gsap.ticker.add(() => {
-    const tt = campo.t;
-    const opHanna = suave(tt, 2.82, 2.98) * (1 - suave(tt, 3.02, 3.3)) * lim(campo.opacidade);
-    fotoHanna.style.opacity = opHanna;
-    fotoHanna.style.filter = `blur(${(1 - opHanna) * 10}px)`;
-    campo.esconde = opHanna;
-  });
+function tocarHero() { if (pronto && heroNaTela) heroVideo.play().catch(() => {}); }
+// Antes do clique: o primeiro quadro fica desfocado atrás do pedido, como uma prévia do que vai ser gerado.
+gsap.set(heroVideo, { opacity: 0.35, scale: 1.06, filter: 'blur(16px)' });
+gsap.set(botaoSomHero, { opacity: 0, y: 8 });
+gsap.set(botaoGerar, { opacity: 0, y: 6, pointerEvents: 'none' });
+function mostrarBotao() {
+  gsap.to(botaoGerar, { opacity: 1, y: 0, duration: 0.4, ease: 'back.out(2)', onComplete: () => { botaoGerar.style.pointerEvents = ''; } });
 }
+// O pedido já chega escrito, com o botão pronto (sem esperar digitar).
+digitado.textContent = tx.prompt;
+gsap.delayedCall(movimentoReduzido ? 0 : 0.5, mostrarBotao);
 
-// ---------- A: foto do Shiro — pedido de geração que falha ("pessoa real detectada") e revela a foto ----------
+botaoGerar.addEventListener('click', () => {
+  if (gerando) return;
+  gerando = true;
+  // Toca e pausa dentro do clique: o navegador passa a aceitar o áudio quando o vídeo aparecer.
+  heroVideo.muted = false;
+  heroVideo.play().then(() => { if (!pronto) { heroVideo.pause(); heroVideo.currentTime = 0; } }).catch(() => {});
+  gsap.to(botaoGerar, { opacity: 0, scale: 0.9, duration: 0.25, onComplete: () => { botaoGerar.hidden = true; } });
+  gsap.to({ v: 0 }, { v: 100, duration: 0.6, ease: 'power1.inOut',
+    onUpdate() { mostrarProgresso(this.targets()[0].v); }, onComplete: revelarVideo });
+});
+function revelarVideo() {
+  pronto = true;
+  mostrarProgresso(100);
+  heroVideo.currentTime = 0;
+  botaoSomHero.textContent = t(heroVideo.muted ? 'c.som' : 'c.som-on');
+  gsap.timeline({ onStart: tocarHero })
+    .to(heroVideo, { opacity: 1, scale: 1, filter: 'blur(0px)', duration: 0.8, ease: 'power2.out' })
+    .to(caixa, { opacity: 0, y: -12, filter: 'blur(6px)', duration: 0.4, onComplete: () => { caixa.style.visibility = 'hidden'; } }, 0.3)
+    .to(botaoSomHero, { opacity: 1, y: 0, duration: 0.5 }, 0.5);
+}
+// O botão "Gerar" puxa levemente para o cursor (efeito ímã) enquanto o mouse passa por cima.
+botaoGerar.addEventListener('pointermove', (e) => {
+  const r = botaoGerar.getBoundingClientRect();
+  gsap.to(botaoGerar, { x: (e.clientX - r.left - r.width / 2) * 0.25, y: (e.clientY - r.top - r.height / 2) * 0.35, duration: 0.3 });
+});
+botaoGerar.addEventListener('pointerleave', () => gsap.to(botaoGerar, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1, 0.4)' }));
+// Troca PT/EN: o pedido, o status e os botões acompanham o idioma do site.
+function traduzirPrompt() {
+  tx = HERO_TEXTOS[idioma];
+  digitado.textContent = tx.prompt;
+  botaoGerar.textContent = tx.botao;
+  mostrarProgresso(progresso);
+  botaoSomHero.textContent = t(heroVideo.muted ? 'c.som' : 'c.som-on');
+  if (typeof desenharFoto === 'function') desenharFoto(Math.max(0, pFoto));
+}
+botaoSomHero.addEventListener('click', () => {
+  heroVideo.muted = !heroVideo.muted;
+  tocarHero();
+  botaoSomHero.textContent = t(heroVideo.muted ? 'c.som' : 'c.som-on');
+});
+
+// ---------- H: foto do Shiro — pedido de geração que falha ("pessoa real detectada") e revela a foto ----------
+// Tudo anda com a rolagem: digita, a barra enche, trava no erro e a foto aparece (e volta se a pessoa subir).
 const FOTO_TEXTOS = {
   pt: { prompt: 'gerar retrato: Alisson Martins, IA Creator, luz de estúdio, fundo escuro, 8k',
     gerando: 'gerando', erro: 'error 404 · real_human_detected' },
   en: { prompt: 'generate portrait: Alisson Martins, AI Creator, studio light, dark background, 8k',
     gerando: 'generating', erro: 'error 404 · real_human_detected' },
 };
-const fotoA = document.querySelector('#quem .foto-a');
-let tx = FOTO_TEXTOS[idioma];
-fotoA.classList.add('v-prompt');
-fotoA.innerHTML = `<img class="base" src="media/foto.jpg" alt="">
-  <div class="prompt-caixa"><p class="prompt-linha"><span class="digitado"></span><span class="cursor"></span></p>
-  <div class="prompt-barra"><span></span></div><p class="prompt-status">${tx.gerando} · 0%</p></div>`;
-const caixa = fotoA.querySelector('.prompt-caixa'), digitado = fotoA.querySelector('.digitado');
-const barra = fotoA.querySelector('.prompt-barra span'), status = fotoA.querySelector('.prompt-status');
-const fotoBase = fotoA.querySelector('.base');
-let emErro = false;
-function mostrarProgresso(v) {
-  barra.style.width = `${v}%`;
-  if (!emErro) status.textContent = `${tx.gerando} · ${Math.round(v)}%`;   // no erro, a mensagem fica
-}
-function mostrarErro(ligado) {
-  emErro = ligado;
-  caixa.classList.toggle('erro', ligado);
-  status.classList.toggle('erro', ligado);
-  if (ligado) status.textContent = tx.erro;
-}
-// O pedido é digitado sozinho ao carregar (para a tela não ficar parada); o resto anda com a rolagem.
-const digitar = gsap.to({}, { duration: tx.prompt.length * 0.03, delay: 1.2, ease: 'none',
-  onUpdate() { digitado.textContent = tx.prompt.slice(0, Math.round(this.progress() * tx.prompt.length)); } });
-// Troca PT/EN: o pedido, o status e o erro acompanham o idioma do site.
-function traduzirPrompt() {
-  tx = FOTO_TEXTOS[idioma];
-  digitado.textContent = tx.prompt.slice(0, Math.round(digitar.progress() * tx.prompt.length));
-  status.textContent = emErro ? tx.erro : `${tx.gerando} · ${Math.round(parseFloat(barra.style.width) || 0)}%`;
-}
-
-// Com a rolagem: a barra enche, trava no erro e a foto aparece — e tudo volta se a pessoa rolar para cima.
-{
+const fotoContato = document.querySelector('.foto-contato');
+fotoContato.insertAdjacentHTML('beforeend', `<div class="prompt-caixa"><p class="prompt-linha"><span class="digitado"></span><span class="cursor"></span></p>
+  <div class="prompt-barra"><span></span></div><p class="prompt-status"></p></div>`);
+const caixaFoto = fotoContato.querySelector('.prompt-caixa'), digitadoFoto = fotoContato.querySelector('.digitado');
+const barraFoto = fotoContato.querySelector('.prompt-barra span'), statusFoto = fotoContato.querySelector('.prompt-status');
+const fotoBase = fotoContato.querySelector('.base'), seloFoto = fotoContato.querySelector('figcaption');
+let pFoto = -1;
+function desenharFoto(p) {
   const lim = (v) => Math.min(1, Math.max(0, v));
-  let erroLigado = false;
-  gsap.ticker.add(() => {
-    const q = document.getElementById('quem');
-    const p = lim(window.scrollY / ((q.offsetHeight - window.innerHeight) * 0.62));
-    if (p > 0 && digitar.progress() < 1) digitar.progress(1);     // rolou antes de terminar de digitar
-    mostrarProgresso(63 * lim(p / 0.5));
-    if (p >= 0.5 !== erroLigado) { erroLigado = p >= 0.5; mostrarErro(erroLigado); }
-    const r = lim((p - 0.68) / 0.3);                                 // revelação da foto
-    gsap.set(caixa, { opacity: 1 - lim(r * 2), y: -10 * r, filter: `blur(${6 * r}px)` });
-    gsap.set(fotoBase, { opacity: r, scale: 1.04 - 0.04 * r, filter: `blur(${12 * (1 - r)}px)` });
-  });
+  const tf = FOTO_TEXTOS[idioma];
+  const d = lim(p / 0.3), b = lim((p - 0.32) / 0.25), erro = p >= 0.57, r = lim((p - 0.7) / 0.25);
+  digitadoFoto.textContent = tf.prompt.slice(0, Math.round(d * tf.prompt.length));
+  barraFoto.style.width = `${63 * b}%`;
+  statusFoto.textContent = erro ? tf.erro : `${tf.gerando} · ${Math.round(63 * b)}%`;
+  caixaFoto.classList.toggle('erro', erro);
+  statusFoto.classList.toggle('erro', erro);
+  gsap.set(caixaFoto, { opacity: 1 - lim(r * 2), y: -10 * r, filter: `blur(${6 * r}px)` });
+  gsap.set(fotoBase, { opacity: r, scale: 1.04 - 0.04 * r, filter: `blur(${12 * (1 - r)}px)` });
+  gsap.set(seloFoto, { opacity: lim((p - 0.92) / 0.08) });
 }
+ScrollTrigger.create({ trigger: '.contato-palco', start: 'top 75%', end: 'bottom bottom', scrub: true,
+  onUpdate: (self) => { pFoto = self.progress; desenharFoto(pFoto); } });
+desenharFoto(0);
+
+// Fora da tela o vídeo pausa (e volta a tocar quando a pessoa sobe de novo).
+new IntersectionObserver(([e]) => {
+  heroNaTela = e.isIntersecting;
+  if (heroNaTela) tocarHero(); else heroVideo.pause();
+}).observe(heroVideo);
 
 // Entradas de texto
 // Entrada do título: espera as partículas ficarem prontas (ou 1,2 s) para não disputar o processador.
@@ -333,20 +320,10 @@ function glitchTitulos() {
   setTimeout(glitchTitulos, 1800 + Math.random() * 1700);
 }
 if (!movimentoReduzido) setTimeout(glitchTitulos, 3500);
-gsap.to('#quem .bloco-texto, #quem .foto-a', {
+gsap.to('#quem .bloco-texto, #quem .hero-video', {
   opacity: 0, y: -60, filter: 'blur(10px)', ease: 'none',
   scrollTrigger: { trigger: '#quem', start: '86% bottom', end: 'bottom bottom', scrub: true },
 });
-gsap.timeline({ scrollTrigger: { trigger: '#ruido', start: 'top 70%', end: 'bottom bottom', scrub: true } })
-  .from('#ruido .bloco-texto > *', { y: 40, opacity: 0, filter: 'blur(8px)', stagger: 0.1, duration: 0.3 })
-  .to('#ruido .hud-flutuante li', { opacity: 1, stagger: 0.08, duration: 0.2 }, 0.1)
-  .to({}, { duration: 0.6 });   // o texto de B fica visível enquanto a Hanna se forma
-// ...e some (desfocando) junto com ela enquanto a seção C sobe.
-gsap.to('#ruido .bloco-texto, #ruido .hud-flutuante', {
-  opacity: 0, y: -60, filter: 'blur(10px)', ease: 'none', immediateRender: false,
-  scrollTrigger: { trigger: '#ruido', start: () => `bottom-=${window.innerHeight * 0.4} bottom`, end: () => `bottom-=${window.innerHeight * 0.2} bottom`, scrub: true },
-});
-
 // ---------- C: vitrine, troca de idioma ----------
 const legenda = document.querySelector('.vitrine-legenda');
 const quadro = document.querySelector('.vitrine-quadro');
@@ -364,12 +341,6 @@ function mostrarFala(i) {
 gsap.timeline({ scrollTrigger: { trigger: '#idiomas', start: 'top top', end: 'bottom bottom', scrub: 1,
   onUpdate: (self) => mostrarFala(Math.min(FALAS.length - 1, Math.floor(self.progress * FALAS.length * 0.999))) } })
   .fromTo('.vitrine-midia', { scale: 1 }, { scale: 1.12, ease: 'none', duration: 1 });
-// C sobrepõe o fim de B (margin-top: -100vh no CSS). Enquanto sobe, o palco de C é segurado no topo da tela,
-// então C surge no lugar enquanto a Hanna vira poeira — troca cruzada, sem tela vazia.
-gsap.fromTo('#idiomas .palco', { y: () => -window.innerHeight }, {
-  y: 0, ease: 'none', immediateRender: true,
-  scrollTrigger: { trigger: '#idiomas', start: 'top bottom', end: 'top top', scrub: true, invalidateOnRefresh: true },
-});
 gsap.fromTo('.vitrine', { opacity: 0, scale: 0.85, filter: 'blur(12px)' }, {
   opacity: 1, scale: 1, filter: 'blur(0px)', ease: 'none',
   scrollTrigger: { trigger: '#idiomas', start: 'top 40%', end: 'top top', scrub: true },
@@ -379,7 +350,7 @@ gsap.fromTo('#idiomas .bloco-texto > *', { y: 30, opacity: 0, filter: 'blur(8px)
   scrollTrigger: { trigger: '#idiomas', start: 'top 20%', end: 'top top', scrub: true },
 });
 
-const botaoSom = document.querySelector('.botao-som');
+const botaoSom = document.querySelector('#idiomas .botao-som');
 function atualizarBotaoSom() {
   botaoSom.textContent = t('c.som');
   botaoSom.hidden = !document.querySelector('.vitrine-midia[src$=".mp4"]');   // só aparece quando o vídeo final existir
@@ -553,9 +524,6 @@ window.addEventListener('load', () => {
 // ---------- Início ----------
 aplicarIdioma();
 mostrarFala(0);
-// Partículas primeiro; o feed (vídeos) só é montado quando o navegador estiver ocioso.
-montarParticulas().finally(() => {
-  document.getElementById('particulas').classList.add('pronto');
-  requestAnimationFrame(() => requestAnimationFrame(mostrarTitulo));
-  (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(() => montarFeed('todos'));
-});
+// O feed (vídeos) só é montado quando o navegador estiver ocioso.
+requestAnimationFrame(() => requestAnimationFrame(mostrarTitulo));
+(window.requestIdleCallback || ((f) => setTimeout(f, 300)))(() => montarFeed('todos'));

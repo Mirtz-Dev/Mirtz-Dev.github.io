@@ -3,20 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Alisson Martins — IA Creator · Direct Response</title>
-  <meta name="description" content="IA Creator · Direct Response: avatares, lipsync, vozes e cenas com IA para VSLs, leads, upsells e anúncios em cinco idiomas.">
+  <title>Alisson Martins — IA Creator</title>
+  <meta name="description" content="IA Creator: avatares, lipsync, vozes e cenas com IA para VSLs, leads, upsells e anúncios em cinco idiomas.">
   <meta name="theme-color" content="#05070a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=40">
-  <script type="importmap">
-    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js" } }
-  </script>
+  <link rel="stylesheet" href="css/style.css?v=44">
 </head>
 <body>
-  <canvas id="particulas" aria-hidden="true"></canvas>
-  <img class="rosto-real" id="rosto-hanna" src="media/avatar-retrato.jpg" alt="">
 
   <div class="grao" aria-hidden="true"></div>
 
@@ -24,7 +19,6 @@
     <a class="marca" href="#quem" data-nav>Alisson Martins</a>
     <nav class="capitulos" aria-label="Capítulos">
       <a href="#quem" data-nav data-cap="quem"><span>A</span><em data-i18n="cap.quem"></em></a>
-      <a href="#ruido" data-nav data-cap="ruido"><span>B</span><em data-i18n="cap.ruido"></em></a>
       <a href="#idiomas" data-nav data-cap="idiomas"><span>C</span><em data-i18n="cap.idiomas"></em></a>
       <a href="#numeros" data-nav data-cap="numeros"><span>D</span><em data-i18n="cap.numeros"></em></a>
       <a href="#trabalhos" data-nav data-cap="trabalhos"><span>E</span><em data-i18n="cap.trabalhos"></em></a>
@@ -39,7 +33,6 @@
   </header>
 
   <div class="hud hud-esq" aria-hidden="true"><span data-i18n="hud.funcao"></span></div>
-  <div class="hud hud-dir" aria-hidden="true"><span id="hud-leitura">SEED 4821 · STEP 00/30</span></div>
 
   <main>
     <!-- A · Quem cria -->
@@ -51,24 +44,13 @@
           <p class="lead" data-i18n="a.lead"></p>
           <p class="dica-rolar"><span class="seta"></span><span data-i18n="a.rolar"></span></p>
         </div>
-        <div class="foto-a" role="img" aria-label="Foto de Alisson Martins"></div>
-      </div>
-    </section>
-
-    <!-- B · Do ruído ao avatar -->
-    <section id="ruido" class="cena cena-alta">
-      <div class="palco">
-        <div class="bloco-texto">
-          <h2 class="titulo-display" data-i18n="b.titulo"></h2>
-          <p class="lead" data-i18n="b.lead"></p>
-        </div>
-        <ul class="hud-flutuante" aria-hidden="true">
-          <li style="--x:58%;--y:18%">SEED · 4821</li>
-          <li style="--x:88%;--y:28%" id="hud-steps">STEPS · 00/30</li>
-          <li style="--x:54%;--y:78%">CFG · 7.0</li>
-          <li style="--x:86%;--y:70%">LIPSYNC · 24 FPS</li>
-          <li style="--x:70%;--y:90%">EN · DE · FR · IT · PT</li>
-        </ul>
+        <figure class="hero-video">
+          <div class="hero-quadro">
+            <video class="hero-midia" src="media/hanna.mp4" poster="media/hanna-poster.jpg" muted loop playsinline preload="auto"
+              aria-label="Vídeo feito com IA: a mesma avatar fala em cinco idiomas"></video>
+          </div>
+          <button class="botao-som" type="button" data-i18n="c.som"></button>
+        </figure>
       </div>
     </section>
 
@@ -165,7 +147,13 @@
 
     <!-- H · Contato -->
     <section id="contato" class="cena cena-livre">
+      <div class="contato-palco">
       <div class="contato">
+        <figure class="foto-contato">
+          <img class="base" src="media/foto.jpg" alt="Foto de Alisson Martins">
+          <figcaption>✓ real_human_detected</figcaption>
+        </figure>
+        <div class="contato-texto">
         <h2 class="titulo-display" data-i18n="h.titulo"></h2>
         <a class="botao-principal" id="pedir-portfolio" href="#" data-i18n="h.cta"></a>
         <p class="nota" data-i18n="h.nota"></p>
@@ -174,6 +162,8 @@
           <li><a id="link-linkedin" href="#">LinkedIn</a></li>
           <li><a id="link-instagram" href="#">Instagram</a></li>
         </ul>
+        </div>
+      </div>
       </div>
       <footer class="rodape">
         <div class="faixa" aria-hidden="true">
@@ -192,8 +182,8 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrambleTextPlugin.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
-  <script src="js/feed-data.js?v=40"></script>
-  <script src="js/wall-data.js?v=40"></script>
-  <script type="module" src="js/main.js?v=40"></script>
+  <script src="js/feed-data.js?v=44"></script>
+  <script src="js/wall-data.js?v=44"></script>
+  <script type="module" src="js/main.js?v=44"></script>
 </body>
 </html>
