@@ -335,9 +335,7 @@ main { position: relative; z-index: 2; }
   .contato-texto .nota::before { margin: 0 auto 14px; }
   .contato-texto .links { justify-content: center; }
   .prompt-caixa { left: 6%; right: 6%; font-size: 11px; padding: 12px 14px; }
-  .vitrine-quadro { width: min(250px, 60vw); max-height: 52vh; }
-  .chips-idioma { margin-top: 12px; }
-  #idiomas .lead, #trabalhos .lead { display: none; }
+  #trabalhos .lead { display: none; }
   .celular { width: min(250px, 64vw); max-height: 58vh; }
   .palco-pilha { grid-template-columns: 1fr; grid-template-rows: auto 1fr; padding-top: 76px; }
   .palco-pilha .lead { display: none; }

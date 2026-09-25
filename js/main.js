@@ -9,15 +9,13 @@ const CONFIG = {
 // ---------- Textos PT / EN ----------
 const TEXTOS = {
   pt: {
-    'cap.quem': 'Quem cria', 'cap.idiomas': 'Cinco idiomas', 'cap.numeros': 'Volume',
+    'cap.quem': 'Quem cria', 'cap.numeros': 'Volume',
     'cap.trabalhos': 'Trabalhos', 'cap.produto': 'Seu produto', 'cap.servicos': 'O que eu faço', 'cap.contato': 'Contato',
     'nav.contato': 'Contato', 'hud.funcao': 'IA Creator',
     'a.cargo': 'IA Creator',
     'a.lead': 'Crio avatares, vozes e cenas com IA para VSLs, leads, upsells e anúncios — em cinco idiomas. E construo as automações que aceleram tudo isso.',
     'a.rolar': 'Role para ver mais',
-    'c.titulo': 'Um rosto. Cinco idiomas.',
-    'c.lead': 'A mesma personagem vende em inglês, alemão, francês, italiano e português. Repare no que acontece quando ela vira de costas.',
-    'c.som': 'Ativar som', 'c.som-on': 'Som ligado', 'c.previa': 'Prévia · vídeo final em produção',
+    'c.som': 'Ativar som', 'c.som-on': 'Som ligado',
     'd.criativos': 'criativos criados', 'd.anos': 'anos de experiência', 'd.idiomas': 'idiomas', 'd.formatos': 'formatos',
     'e.titulo': 'Trabalhos',
     'e.lead': 'Avatares, inserts 3D e histórias feitos para ofertas reais.',
@@ -33,15 +31,13 @@ const TEXTOS = {
     'h.embreve': 'em breve',
   },
   en: {
-    'cap.quem': 'The creator', 'cap.idiomas': 'Five languages', 'cap.numeros': 'Volume',
+    'cap.quem': 'The creator', 'cap.numeros': 'Volume',
     'cap.trabalhos': 'Work', 'cap.produto': 'Your product', 'cap.servicos': 'What I do', 'cap.contato': 'Contact',
     'nav.contato': 'Contact', 'hud.funcao': 'AI Creator',
     'a.cargo': 'AI Creator',
     'a.lead': 'I create AI avatars, voices and scenes for VSLs, leads, upsells and ads — in five languages. And I build the automations that speed it all up.',
     'a.rolar': 'Scroll for more',
-    'c.titulo': 'One face. Five languages.',
-    'c.lead': 'The same character sells in English, German, French, Italian and Portuguese. Watch what happens when she turns around.',
-    'c.som': 'Turn sound on', 'c.som-on': 'Sound on', 'c.previa': 'Preview · final video in production',
+    'c.som': 'Turn sound on', 'c.som-on': 'Sound on',
     'd.criativos': 'creatives produced', 'd.anos': 'years of experience', 'd.idiomas': 'languages', 'd.formatos': 'formats',
     'e.titulo': 'Work',
     'e.lead': 'Avatars, 3D inserts and stories made for real offers.',
@@ -81,16 +77,6 @@ const SERVICOS = {
   ],
 };
 
-// Falas do vídeo-vitrine (rascunho — ver video-vitrine/ROTEIRO.md)
-const FALAS = [
-  "Three months ago these jeans wouldn't get past my knees. Today they close with room to spare.",
-  'Ich habe alles versucht. Diät, Fitnessstudio, Tee, Shakes. Nichts hat funktioniert.',
-  "Ce n'est pas un manque de volonté. C'est ton métabolisme qui ralentit la nuit.",
-  'Dieci gocce prima di dormire. Solo questo. Il primo cambiamento? Niente più gonfiore.',
-  'Mas sabe o que é mais louco? Eu não existo. Nem eu, nem essa casa, nem esse produto.',
-  'Esse vídeo inteiro foi feito com IA — pelo Alisson Martins. Imagina o que ele faz pela sua oferta.',
-];
-
 let idioma = 'pt';
 try { idioma = localStorage.getItem('idioma') || 'pt'; } catch { /* sem storage */ }
 const t = (chave) => TEXTOS[idioma][chave] ?? chave;
@@ -111,7 +97,6 @@ function aplicarIdioma() {
     `<li><span class="num">${String(i + 1).padStart(2, '0')}</span><h3>${h}</h3><p>${p}</p></li>`).join('');
   lista.querySelectorAll('h3').forEach(quebrarLetras);
   montarContato();
-  atualizarBotaoSom();
   if (typeof traduzirPrompt === 'function') traduzirPrompt();
 }
 
@@ -324,38 +309,6 @@ gsap.to('#quem .bloco-texto, #quem .hero-video', {
   opacity: 0, y: -60, filter: 'blur(10px)', ease: 'none',
   scrollTrigger: { trigger: '#quem', start: '86% bottom', end: 'bottom bottom', scrub: true },
 });
-// ---------- C: vitrine, troca de idioma ----------
-const legenda = document.querySelector('.vitrine-legenda');
-const quadro = document.querySelector('.vitrine-quadro');
-const chips = [...document.querySelectorAll('.chips-idioma li')];
-let falaAtual = -1;
-function mostrarFala(i) {
-  if (i === falaAtual) return;
-  falaAtual = i;
-  chips.forEach((c) => c.classList.toggle('ativo', +c.dataset.idx === Math.min(i, 4)));
-  gsap.to(legenda, { duration: 0.8, scrambleText: { text: FALAS[i], chars: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789', speed: 0.6 } });
-  quadro.classList.remove('glitch');
-  void quadro.offsetWidth;
-  if (i >= 4) quadro.classList.add('glitch');
-}
-gsap.timeline({ scrollTrigger: { trigger: '#idiomas', start: 'top top', end: 'bottom bottom', scrub: 1,
-  onUpdate: (self) => mostrarFala(Math.min(FALAS.length - 1, Math.floor(self.progress * FALAS.length * 0.999))) } })
-  .fromTo('.vitrine-midia', { scale: 1 }, { scale: 1.12, ease: 'none', duration: 1 });
-gsap.fromTo('.vitrine', { opacity: 0, scale: 0.85, filter: 'blur(12px)' }, {
-  opacity: 1, scale: 1, filter: 'blur(0px)', ease: 'none',
-  scrollTrigger: { trigger: '#idiomas', start: 'top 40%', end: 'top top', scrub: true },
-});
-gsap.fromTo('#idiomas .bloco-texto > *', { y: 30, opacity: 0, filter: 'blur(8px)' }, {
-  y: 0, opacity: 1, filter: 'blur(0px)', stagger: 0.1, ease: 'none',
-  scrollTrigger: { trigger: '#idiomas', start: 'top 20%', end: 'top top', scrub: true },
-});
-
-const botaoSom = document.querySelector('#idiomas .botao-som');
-function atualizarBotaoSom() {
-  botaoSom.textContent = t('c.som');
-  botaoSom.hidden = !document.querySelector('.vitrine-midia[src$=".mp4"]');   // só aparece quando o vídeo final existir
-}
-
 // ---------- D: túnel dos 2000 ----------
 const mundo = document.querySelector('.tunel-mundo');
 const tiles = [];
@@ -462,9 +415,9 @@ document.querySelectorAll('.filtros button').forEach((b) => b.addEventListener('
   lenis.scrollTo(secTrabalhos, { duration: 0.8 });
 }));
 
-// HUD de baixo só vale para as partículas; some a partir da seção C.
+// HUD de baixo só acompanha o topo; some a partir da seção D.
 ScrollTrigger.create({
-  trigger: '#idiomas', start: 'top 80%',
+  trigger: '#numeros', start: 'top 80%',
   onEnter: () => document.body.classList.add('hud-oculto'),
   onLeaveBack: () => document.body.classList.remove('hud-oculto'),
 });
@@ -523,7 +476,6 @@ window.addEventListener('load', () => {
 
 // ---------- Início ----------
 aplicarIdioma();
-mostrarFala(0);
 // O feed (vídeos) só é montado quando o navegador estiver ocioso.
 requestAnimationFrame(() => requestAnimationFrame(mostrarTitulo));
 (window.requestIdleCallback || ((f) => setTimeout(f, 300)))(() => montarFeed('todos'));
