@@ -1,4 +1,4 @@
-﻿import { iniciarParticulas } from './particulas.js?v=39';
+﻿import { iniciarParticulas } from './particulas.js?v=40';
 
 // ---------- Configuração (preencher antes de publicar) ----------
 const CONFIG = {
@@ -30,7 +30,7 @@ const TEXTOS = {
     'g.titulo': 'O que eu faço',
     'h.titulo': 'Vamos escalar a próxima oferta?', 'h.cta': 'Entre em contato',
     'h.nota': 'Vaga, freela ou projeto: me manda um e-mail e a gente conversa.',
-    'h.faixa': 'IA Creator · Direct Response · EN · DE · FR · IT · PT · +2.000 criativos · ', 'h.carregou': 'esta página carregou em',
+    'h.faixa': 'IA Creator · Direct Response · EN · DE · FR · IT · PT · +2.000 criativos · ', 'h.carregou': 'esta página carregou em', 'h.direitos': 'Todos os direitos reservados',
     'h.assunto': 'Contato pelo site — Alisson Martins',
     'h.corpo': 'Olá, Alisson! Vi seu site e gostaria de conversar.\n\nEmpresa:\nVaga/projeto:\n',
     'h.embreve': 'em breve',
@@ -56,7 +56,7 @@ const TEXTOS = {
     'g.titulo': 'What I do',
     'h.titulo': 'Ready to scale your next offer?', 'h.cta': 'Get in touch',
     'h.nota': 'Job, freelance or project: send me an email and let’s talk.',
-    'h.faixa': 'AI Creator · Direct Response · EN · DE · FR · IT · PT · 2,000+ creatives · ', 'h.carregou': 'this page loaded in',
+    'h.faixa': 'AI Creator · Direct Response · EN · DE · FR · IT · PT · 2,000+ creatives · ', 'h.carregou': 'this page loaded in', 'h.direitos': 'All rights reserved',
     'h.assunto': 'Contact from website — Alisson Martins',
     'h.corpo': 'Hi Alisson! I saw your website and would like to talk.\n\nCompany:\nRole/project:\n',
     'h.embreve': 'soon',
