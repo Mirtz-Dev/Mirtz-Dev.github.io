@@ -133,6 +133,8 @@ main { position: relative; z-index: 2; }
 .botao-gerar, .hero-video .botao-som { opacity: 0; }
 /* Texto e vídeo mais perto do centro (no celular volta a empilhar) */
 @media (min-width: 861px) {
+  /* O +2000 sobe meia tela e entra enquanto o topo some (antes sobrava ~meia tela vazia entre os dois) */
+  #numeros { margin-top: -50vh; }
   #quem .palco { grid-template-columns: auto auto; justify-content: center; column-gap: clamp(48px, 10vw, 180px); }
 }
 .prompt-rodape { display: flex; align-items: center; justify-content: space-between; gap: 12px; min-height: 40px; }

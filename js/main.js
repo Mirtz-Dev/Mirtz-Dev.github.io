@@ -13,7 +13,7 @@ const TEXTOS = {
     'cap.trabalhos': 'Trabalhos', 'cap.produto': 'Seu produto', 'cap.servicos': 'O que eu faço', 'cap.contato': 'Contato',
     'nav.contato': 'Contato', 'hud.funcao': 'IA Creator',
     'a.cargo': 'IA Creator',
-    'a.lead': 'Crio avatares, vozes e cenas com IA para VSLs, leads, upsells e anúncios — em cinco idiomas. E construo as automações que aceleram tudo isso.',
+    'a.lead': 'Crio avatares, vozes e cenas com IA para VSLs, leads, upsells e anúncios, em qualquer idioma. E construo as automações que aceleram tudo isso.',
     'a.rolar': 'Role para ver mais',
     'c.som': 'Ativar som', 'c.som-on': 'Som ligado',
     'd.criativos': 'criativos criados', 'd.anos': 'anos de experiência', 'd.idiomas': 'idiomas', 'd.formatos': 'formatos',
@@ -21,12 +21,12 @@ const TEXTOS = {
     'e.lead': 'Avatares, inserts 3D e histórias feitos para ofertas reais.',
     'e.f.todos': 'Todos', 'e.f.homens': 'Homens', 'e.f.mulheres': 'Mulheres', 'e.f.historias': 'Histórias',
     'f.titulo': 'Seu produto poderia estar aqui.',
-    'f.lead': 'A velaxa é uma marca fictícia que criei do zero com IA: identidade, embalagens, linha de produtos e hero shots — sem estúdio, sem fotógrafo, sem frete. Imagina isso com a sua embalagem.',
+    'f.lead': 'A velaxa é uma marca fictícia que criei do zero com IA: identidade, embalagens, linha de produtos e hero shots. Sem estúdio, sem fotógrafo, sem frete. Imagina isso com a sua embalagem.',
     'g.titulo': 'O que eu faço',
     'h.titulo': 'Vamos escalar a próxima oferta?', 'h.cta': 'Entre em contato',
     'h.nota': 'Vaga, freela ou projeto: me manda um e-mail e a gente conversa.',
-    'h.faixa': 'IA Creator · EN · DE · FR · IT · PT · +2.000 criativos · ', 'h.carregou': 'esta página carregou em', 'h.direitos': 'Todos os direitos reservados',
-    'h.assunto': 'Contato pelo site — Alisson Martins',
+    'h.faixa': 'IA Creator · Qualquer idioma · +2.000 criativos · ', 'h.carregou': 'esta página carregou em', 'h.direitos': 'Todos os direitos reservados',
+    'h.assunto': 'Contato pelo site · Alisson Martins',
     'h.corpo': 'Olá, Alisson! Vi seu site e gostaria de conversar.\n\nEmpresa:\nVaga/projeto:\n',
     'h.embreve': 'em breve',
   },
@@ -35,7 +35,7 @@ const TEXTOS = {
     'cap.trabalhos': 'Work', 'cap.produto': 'Your product', 'cap.servicos': 'What I do', 'cap.contato': 'Contact',
     'nav.contato': 'Contact', 'hud.funcao': 'AI Creator',
     'a.cargo': 'AI Creator',
-    'a.lead': 'I create AI avatars, voices and scenes for VSLs, leads, upsells and ads — in five languages. And I build the automations that speed it all up.',
+    'a.lead': 'I create AI avatars, voices and scenes for VSLs, leads, upsells and ads, in any language. And I build the automations that speed it all up.',
     'a.rolar': 'Scroll for more',
     'c.som': 'Turn sound on', 'c.som-on': 'Sound on',
     'd.criativos': 'creatives produced', 'd.anos': 'years of experience', 'd.idiomas': 'languages', 'd.formatos': 'formats',
@@ -43,12 +43,12 @@ const TEXTOS = {
     'e.lead': 'Avatars, 3D inserts and stories made for real offers.',
     'e.f.todos': 'All', 'e.f.homens': 'Men', 'e.f.mulheres': 'Women', 'e.f.historias': 'Stories',
     'f.titulo': 'Your product could be here.',
-    'f.lead': 'velaxa is a fictional brand I built from scratch with AI: identity, packaging, product line and hero shots — no studio, no photographer, no shipping. Picture this with your packaging.',
+    'f.lead': 'velaxa is a fictional brand I built from scratch with AI: identity, packaging, product line and hero shots. No studio, no photographer, no shipping. Picture this with your packaging.',
     'g.titulo': 'What I do',
     'h.titulo': 'Ready to scale your next offer?', 'h.cta': 'Get in touch',
     'h.nota': 'Job, freelance or project: send me an email and let’s talk.',
-    'h.faixa': 'AI Creator · EN · DE · FR · IT · PT · 2,000+ creatives · ', 'h.carregou': 'this page loaded in', 'h.direitos': 'All rights reserved',
-    'h.assunto': 'Contact from website — Alisson Martins',
+    'h.faixa': 'AI Creator · Any language · 2,000+ creatives · ', 'h.carregou': 'this page loaded in', 'h.direitos': 'All rights reserved',
+    'h.assunto': 'Contact from website · Alisson Martins',
     'h.corpo': 'Hi Alisson! I saw your website and would like to talk.\n\nCompany:\nRole/project:\n',
     'h.embreve': 'soon',
   },
@@ -58,7 +58,7 @@ const SERVICOS = {
   pt: [
     ['Avatares do zero', 'Personagens realistas criados do nada, com rosto, voz e personalidade consistentes.'],
     ['Lipsync', 'Boca, respiração e microexpressões sincronizadas com qualquer locução.'],
-    ['Localização em 5 idiomas', 'O mesmo criativo em EN, DE, FR, IT e PT, pronto para cada mercado.'],
+    ['Localização para qualquer idioma', 'O mesmo criativo no idioma de cada mercado, com voz e lipsync nativos.'],
     ['Inserts e B-roll com IA', 'Cenas 3D, histórias e demonstrações que sustentam a narrativa da VSL.'],
     ['Vozes e locução com IA', 'Clonagem e direção de voz com emoção, ritmo e sotaque certos.'],
     ['UGC com IA', 'Depoimentos no formato nativo de rede social, prontos para anúncio.'],
@@ -68,7 +68,7 @@ const SERVICOS = {
   en: [
     ['Avatars from scratch', 'Realistic characters built from nothing, with consistent face, voice and personality.'],
     ['Lipsync', 'Mouth, breathing and micro-expressions synced to any voiceover.'],
-    ['Localization in 5 languages', 'The same creative in EN, DE, FR, IT and PT, ready for each market.'],
+    ['Localization into any language', "The same creative in each market's language, with native voice and lipsync."],
     ['AI inserts & B-roll', '3D scenes, stories and demos that carry the VSL narrative.'],
     ['AI voices & voiceover', 'Voice cloning and direction with the right emotion, pace and accent.'],
     ['AI UGC', 'Native social-style testimonials, ready to run as ads.'],
@@ -171,8 +171,8 @@ document.querySelectorAll('[data-split]').forEach((el) => {
 // ---------- A: vídeo da Hanna — o pedido aparece pronto e a pessoa clica em "Gerar" ----------
 // O clique libera o som (o navegador só deixa tocar com áudio depois de uma interação): carrega rápido e ela já fala.
 const HERO_TEXTOS = {
-  pt: { prompt: 'gerar vídeo: Hanna, UGC, 1 avatar → 5 idiomas, voz nativa, 9:16', botao: 'Gerar', gerando: 'gerando', pronto: 'pronto · 5 idiomas' },
-  en: { prompt: 'generate video: Hanna, UGC, 1 avatar → 5 languages, native voice, 9:16', botao: 'Generate', gerando: 'generating', pronto: 'done · 5 languages' },
+  pt: { prompt: 'gerar vídeo: Hanna, UGC, 1 avatar → qualquer idioma, voz nativa, 9:16', botao: 'Gerar', gerando: 'gerando', pronto: 'pronto · qualquer idioma' },
+  en: { prompt: 'generate video: Hanna, UGC, 1 avatar → any language, native voice, 9:16', botao: 'Generate', gerando: 'generating', pronto: 'done · any language' },
 };
 const heroQuadro = document.querySelector('.hero-quadro');
 const heroVideo = heroQuadro.querySelector('.hero-midia');
@@ -350,18 +350,18 @@ function desenharTunel(prog) {
   }
 }
 desenharTunel(0);
-// O túnel só começa depois que o texto do +2000 aparece (texto entra em 'top 40%').
+// O túnel começa logo depois que o texto do +2000 aparece (texto entra em 'top 60%').
 ScrollTrigger.create({
-  trigger: '#numeros', start: 'top 10%', end: 'bottom top', scrub: true,
+  trigger: '#numeros', start: 'top 45%', end: 'bottom top', scrub: true,
   onUpdate: (self) => desenharTunel(self.progress),
 });
-gsap.fromTo('.tunel', { opacity: 0 }, { opacity: 1, ease: 'none', scrollTrigger: { trigger: '#numeros', start: 'top 10%', end: 'top -25%', scrub: true } });
+gsap.fromTo('.tunel', { opacity: 0 }, { opacity: 1, ease: 'none', scrollTrigger: { trigger: '#numeros', start: 'top 45%', end: 'top 0%', scrub: true } });
 gsap.to(contador, {
   v: 2000, ease: 'power1.inOut', snap: { v: 10 },
   onUpdate: () => { elContador.textContent = contador.v.toLocaleString('pt-BR'); },
-  scrollTrigger: { trigger: '#numeros', start: 'top 30%', end: 'center center', scrub: 1 },
+  scrollTrigger: { trigger: '#numeros', start: 'top 50%', end: 'center center', scrub: 1 },
 });
-gsap.from('.numeros > *', { opacity: 0, y: 30, stagger: 0.08, scrollTrigger: { trigger: '#numeros', start: 'top 40%', toggleActions: 'play none none reverse' } });
+gsap.from('.numeros > *', { opacity: 0, y: 30, stagger: 0.08, scrollTrigger: { trigger: '#numeros', start: 'top 60%', toggleActions: 'play none none reverse' } });
 
 // ---------- E: feed de celular ----------
 const trilho = document.querySelector('.feed-trilho');
