@@ -40,6 +40,9 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   animation: grao 1s steps(4) infinite;
 }
 @keyframes grao { 0% { transform: translate(0, 0); } 25% { transform: translate(-3%, 2%); } 50% { transform: translate(2%, -3%); } 75% { transform: translate(-2%, -2%); } }
+/* Modo leve (aparelho fraco): sem desfoques animados nem grão em movimento (o JS marca <html class="leve">) */
+.leve *:not(.hero-midia) { filter: none !important; }
+.leve .grao { animation: none; }
 
 main { position: relative; z-index: 2; }
 

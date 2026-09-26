@@ -134,6 +134,10 @@ window.scrollTo(0, 0);
 gsap.registerPlugin(ScrollTrigger, ScrambleTextPlugin);
 const movimentoReduzido = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 if (movimentoReduzido) document.documentElement.classList.add('movimento-reduzido');
+// Modo leve: aparelho fraco (até 4 núcleos ou até 4 GB de memória) ou quem pede menos movimento fica sem desfoques
+// animados e sem grão em movimento, e o túnel usa metade das miniaturas.
+const modoLeve = movimentoReduzido || (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
+if (modoLeve) document.documentElement.classList.add('leve');
 
 const lenis = new Lenis({ lerp: 0.09 });
 window.__lenis = lenis;   // útil para depuração no console
@@ -313,10 +317,10 @@ gsap.matchMedia().add('(min-width: 861px)', () => {
 const mundo = document.querySelector('.tunel-mundo');
 const tiles = [];
 const PROFUNDIDADE = 9000;
-const totalParede = Math.min(window.WALL_COUNT || 0, window.innerWidth < 860 ? 160 : 321);
+const totalParede = Math.min(window.WALL_COUNT || 0, window.innerWidth < 860 || modoLeve ? 160 : 321);
 for (let i = 0; i < totalParede; i++) {
   const img = document.createElement('img');
-  img.dataset.src = `media/wall/${String(i + 1).padStart(3, '0')}.jpg`;   // carrega só perto da seção D
+  img.dataset.src = `media/wall/${String(i + 1).padStart(3, '0')}.webp`;   // carrega só perto da seção D
   img.alt = '';
   img.decoding = 'async';   // sem loading=lazy: em 3D o navegador acha que estão fora da tela e nunca carrega
   const ang = Math.random() * Math.PI * 2;
@@ -373,7 +377,7 @@ function montarFeed(filtro) {
     const d = document.createElement('div');
     d.className = 'feed-item';
     d.style.top = `${i * 100}%`;
-    d.innerHTML = `<img src="media/feed/${f.id}.jpg" alt="" loading="lazy"><span class="tag">${f.tipo}</span>`;
+    d.innerHTML = `<img src="media/feed/${f.id}.webp" alt="" loading="lazy"><span class="tag">${f.tipo}</span>`;
     trilho.appendChild(d);
     return { el: d, dados: f, video: null };
   });
@@ -402,7 +406,7 @@ function ativarFeed(i) {
       const v = document.createElement('video');
       Object.assign(v, { muted: true, loop: true, playsInline: true, preload: 'metadata', src: `media/feed/${item.dados.id}.mp4` });
       v.setAttribute('muted', '');
-      v.poster = `media/feed/${item.dados.id}.jpg`;
+      v.poster = `media/feed/${item.dados.id}.webp`;
       item.el.querySelector('img').replaceWith(v);
       item.video = v;
     }
