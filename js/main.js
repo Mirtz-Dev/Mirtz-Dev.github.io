@@ -78,7 +78,7 @@ const SERVICOS = {
 };
 
 let idioma = 'pt';
-try { idioma = localStorage.getItem('idioma') || 'pt'; } catch { /* sem storage */ }
+try { idioma = localStorage.getItem('idioma') === 'en' ? 'en' : 'pt'; } catch { /* sem storage */ }
 const t = (chave) => TEXTOS[idioma][chave] ?? chave;
 
 // Títulos grandes viram letras soltas (para o glitch); cada palavra fica inteira na mesma linha.
@@ -324,12 +324,13 @@ for (let i = 0; i < totalParede; i++) {
   tiles.push({ el: img, x: Math.cos(ang) * raio, y: Math.sin(ang) * raio * 0.75, z: -(i / totalParede) * PROFUNDIDADE - 300 });
   mundo.appendChild(img);
 }
-// As 321 miniaturas só baixam quando o túnel está a ~2 telas de distância (não pesam no início).
+// As 321 miniaturas só baixam quando o túnel começa a entrar na tela. Como ele vem logo depois do topo,
+// qualquer margem faria elas baixarem já ao abrir o site (principalmente no celular).
 new IntersectionObserver((entradas, obs) => {
   if (!entradas.some((e) => e.isIntersecting)) return;
   for (const tl of tiles) tl.el.src = tl.el.dataset.src;
   obs.disconnect();
-}, { rootMargin: '200% 0px' }).observe(document.getElementById('numeros'));
+}).observe(document.getElementById('numeros'));
 const contador = { v: 0 };
 const elContador = document.getElementById('contador');
 function desenharTunel(prog) {

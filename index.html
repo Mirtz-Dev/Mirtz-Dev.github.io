@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alisson Martins — IA Creator</title>
   <meta name="description" content="IA Creator: avatares, lipsync, vozes e cenas com IA para VSLs, leads, upsells e anúncios em cinco idiomas.">
@@ -9,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=47">
+  <link rel="stylesheet" href="css/style.css?v=50">
 </head>
 <body>
 
@@ -103,17 +104,17 @@
           <p class="pilha-contagem"><span id="pilha-atual">01</span> / <span id="pilha-total">00</span></p>
         </div>
         <div class="mesa-cartas">
-          <figure class="carta larga"><img src="media/velaxa/par-dia-noite.jpg" alt="Potes velaxa NIGHT e DAY"><figcaption>VELAXA · DAY / NIGHT</figcaption></figure>
-          <figure class="carta"><img src="media/velaxa/hero-flutuando.jpg" alt=""><figcaption>HERO · 01</figcaption></figure>
-          <figure class="carta"><img src="media/velaxa/hero-agua-lua.jpg" alt=""><figcaption>HERO · 02</figcaption></figure>
-          <figure class="carta"><img src="media/velaxa/linha-gotas.jpg" alt=""><figcaption>GOTAS · 03</figcaption></figure>
-          <figure class="carta quadrada"><img src="media/velaxa/frasco-mao.jpg" alt=""><figcaption>NA MÃO · 04</figcaption></figure>
-          <figure class="carta vertical"><img src="media/velaxa/frasco-mesa.jpg" alt=""><figcaption>EM CASA · 05</figcaption></figure>
-          <figure class="carta"><img src="media/velaxa/linha-gummies.jpg" alt=""><figcaption>GOMAS · 06</figcaption></figure>
-          <figure class="carta"><img src="media/velaxa/linha-caixa.jpg" alt=""><figcaption>CAIXA · 07</figcaption></figure>
-          <figure class="carta"><img src="media/velaxa/linha-creme.jpg" alt=""><figcaption>CREME · 08</figcaption></figure>
-          <figure class="carta larga"><img src="media/velaxa/linha-familia.jpg" alt="Linha completa velaxa NIGHT"><figcaption>LINHA COMPLETA · 09</figcaption></figure>
-          <figure class="carta"><img src="media/velaxa/hero-macro.jpg" alt=""><figcaption>DETALHE · 10</figcaption></figure>
+          <figure class="carta larga"><img loading="lazy" decoding="async" src="media/velaxa/par-dia-noite.jpg" alt="Potes velaxa NIGHT e DAY"><figcaption>VELAXA · DAY / NIGHT</figcaption></figure>
+          <figure class="carta"><img loading="lazy" decoding="async" src="media/velaxa/hero-flutuando.jpg" alt=""><figcaption>HERO · 01</figcaption></figure>
+          <figure class="carta"><img loading="lazy" decoding="async" src="media/velaxa/hero-agua-lua.jpg" alt=""><figcaption>HERO · 02</figcaption></figure>
+          <figure class="carta"><img loading="lazy" decoding="async" src="media/velaxa/linha-gotas.jpg" alt=""><figcaption>GOTAS · 03</figcaption></figure>
+          <figure class="carta quadrada"><img loading="lazy" decoding="async" src="media/velaxa/frasco-mao.jpg" alt=""><figcaption>NA MÃO · 04</figcaption></figure>
+          <figure class="carta vertical"><img loading="lazy" decoding="async" src="media/velaxa/frasco-mesa.jpg" alt=""><figcaption>EM CASA · 05</figcaption></figure>
+          <figure class="carta"><img loading="lazy" decoding="async" src="media/velaxa/linha-gummies.jpg" alt=""><figcaption>GOMAS · 06</figcaption></figure>
+          <figure class="carta"><img loading="lazy" decoding="async" src="media/velaxa/linha-caixa.jpg" alt=""><figcaption>CAIXA · 07</figcaption></figure>
+          <figure class="carta"><img loading="lazy" decoding="async" src="media/velaxa/linha-creme.jpg" alt=""><figcaption>CREME · 08</figcaption></figure>
+          <figure class="carta larga"><img loading="lazy" decoding="async" src="media/velaxa/linha-familia.jpg" alt="Linha completa velaxa NIGHT"><figcaption>LINHA COMPLETA · 09</figcaption></figure>
+          <figure class="carta"><img loading="lazy" decoding="async" src="media/velaxa/hero-macro.jpg" alt=""><figcaption>DETALHE · 10</figcaption></figure>
         </div>
       </div>
     </section>
@@ -131,7 +132,7 @@
       <div class="contato-palco">
       <div class="contato">
         <figure class="foto-contato">
-          <img class="base" src="media/foto.jpg" alt="Foto de Alisson Martins">
+          <img class="base" loading="lazy" decoding="async" src="media/foto.jpg" alt="Foto de Alisson Martins">
           <figcaption>✓ real_human_detected</figcaption>
         </figure>
         <div class="contato-texto">
@@ -159,12 +160,12 @@
     </section>
   </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrambleTextPlugin.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
-  <script src="js/feed-data.js?v=47"></script>
-  <script src="js/wall-data.js?v=47"></script>
-  <script type="module" src="js/main.js?v=47"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js" integrity="sha384-XmJ9SoHtVOHoQUcKvFAzVXwdkKo1Ie3bhmSoIAkcdsHGaIrVJIkmozyq0FJeb/Ly" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js" integrity="sha384-wl5TeDVvOWt30Pbf8aSo2ZrzsOjddu3avOBvHe+p+OhJt9gP6w9YXmDkN5DK2/dF" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrambleTextPlugin.min.js" integrity="sha384-QQ7Drnaxr6AM+cySvZNVNIFsvXLGtDLoS5tlUIt2XvIwnqtBtuD7A2KwqlSAWMi1" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js" integrity="sha384-jqpi9VmOdhyLoLURgjCn7EpnG9BbnHW57ibIZoeaIU+erWDH3k8fQQg0xH2ySjnw" crossorigin="anonymous"></script>
+  <script src="js/feed-data.js?v=50"></script>
+  <script src="js/wall-data.js?v=50"></script>
+  <script type="module" src="js/main.js?v=50"></script>
 </body>
 </html>

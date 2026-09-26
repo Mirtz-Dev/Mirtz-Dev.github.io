@@ -266,7 +266,7 @@ main { position: relative; z-index: 2; }
    enquanto a rolagem conduz o pedido; depois o rodapé sobe. */
 .contato-palco { height: 190vh; }
 .contato {
-  position: sticky; top: 0; min-height: 100vh; max-width: 1280px; margin: 0 auto; padding: 90px 0 40px;
+  position: sticky; top: 0; min-height: calc(100vh - 210px); max-width: 1280px; margin: 0 auto; padding: 80px 0 24px;
   display: grid; grid-template-columns: minmax(260px, 440px) 1fr; gap: clamp(28px, 5vw, 80px); align-items: center;
 }
 .contato .titulo-display { font-size: clamp(40px, 5vw, 88px); }
@@ -299,7 +299,7 @@ main { position: relative; z-index: 2; }
 .links a:hover { color: var(--ciano); border-color: var(--ciano); }
 .links a.pendente { opacity: .45; pointer-events: none; }
 /* Rodapé: faixa de letras vazadas correndo + linha de status */
-.rodape { margin: 18vh calc(-1 * var(--gutter)) -18vh; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-3); }
+.rodape { margin: 0 calc(-1 * var(--gutter)) -18vh; font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--tinta-3); }
 .faixa {
   overflow: hidden; padding: 18px 0; border-top: 1px solid transparent;
   border-image: linear-gradient(90deg, transparent, var(--ciano), var(--magenta), transparent) 1;
@@ -334,7 +334,7 @@ main { position: relative; z-index: 2; }
   #quem .hero-video { order: -1; }
   .hero-quadro { height: min(52vh, 118vw); }
   .contato { grid-template-columns: 1fr; justify-items: center; align-content: center; text-align: center; gap: 18px; padding-top: 70px; }
-  .foto-contato { width: min(64vw, 300px); margin: 0; }
+  .foto-contato { width: min(52vw, 230px); margin: 0; }
   .foto-contato .prompt-caixa { left: 2%; right: 2%; }
   .contato-texto { justify-items: center; }
   .contato-texto .nota::before { margin: 0 auto 14px; }
