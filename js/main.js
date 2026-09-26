@@ -174,9 +174,6 @@ const heroQuadro = document.querySelector('.hero-quadro');
 const heroVideo = heroQuadro.querySelector('.hero-midia');
 const botaoSomHero = document.querySelector('.hero-video .botao-som');
 let tx = HERO_TEXTOS[idioma];
-heroQuadro.insertAdjacentHTML('beforeend', `<div class="prompt-caixa"><p class="prompt-linha"><span class="digitado"></span><span class="cursor"></span></p>
-  <div class="prompt-barra"><span></span></div>
-  <div class="prompt-rodape"><p class="prompt-status"></p><button class="botao-gerar" type="button"></button></div></div>`);
 const caixa = heroQuadro.querySelector('.prompt-caixa'), digitado = heroQuadro.querySelector('.digitado');
 const barra = heroQuadro.querySelector('.prompt-barra span'), status = heroQuadro.querySelector('.prompt-status');
 const botaoGerar = heroQuadro.querySelector('.botao-gerar');

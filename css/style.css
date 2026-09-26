@@ -125,6 +125,9 @@ main { position: relative; z-index: 2; }
   border: 1px solid var(--linha); background: var(--bg-2); box-shadow: 0 0 90px rgba(53, 240, 255, .12);
 }
 .hero-midia { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+/* Estado inicial já no CSS (antes do JS rodar): vídeo desfocado atrás do pedido, botões escondidos */
+.hero-midia { opacity: .35; filter: blur(16px); transform: scale(1.06); }
+.botao-gerar, .hero-video .botao-som { opacity: 0; }
 /* Texto e vídeo mais perto do centro (no celular volta a empilhar) */
 @media (min-width: 861px) {
   #quem .palco { grid-template-columns: auto auto; justify-content: center; column-gap: clamp(48px, 10vw, 180px); }
