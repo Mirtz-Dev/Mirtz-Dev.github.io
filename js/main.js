@@ -305,9 +305,12 @@ function glitchTitulos() {
   setTimeout(glitchTitulos, 1800 + Math.random() * 1700);
 }
 if (!movimentoReduzido) setTimeout(glitchTitulos, 3500);
-gsap.to('#quem .bloco-texto, #quem .hero-video', {
-  opacity: 0, y: -60, filter: 'blur(10px)', ease: 'none',
-  scrollTrigger: { trigger: '#quem', start: '86% bottom', end: 'bottom bottom', scrub: true },
+// O topo some desfocando no fim da seção — só no computador; no celular ele rola normalmente.
+gsap.matchMedia().add('(min-width: 861px)', () => {
+  gsap.to('#quem .bloco-texto, #quem .hero-video', {
+    opacity: 0, y: -60, filter: 'blur(10px)', ease: 'none',
+    scrollTrigger: { trigger: '#quem', start: '86% bottom', end: 'bottom bottom', scrub: true },
+  });
 });
 // ---------- D: túnel dos 2000 ----------
 const mundo = document.querySelector('.tunel-mundo');

@@ -324,8 +324,10 @@ main { position: relative; z-index: 2; }
   .bloco-texto { max-width: none; }
   .titulo-display { font-size: clamp(38px, 11vw, 64px); margin-bottom: 12px; }
   .lead { font-size: 14px; margin-bottom: 12px; }
-  #quem .palco { align-items: end; grid-template-rows: 1fr; padding-bottom: 60px; }
-  #quem .palco { grid-template-rows: auto 1fr; }
+  /* Topo no celular: altura do próprio conteúdo (com 100svh fixo o texto era cortado em telas mais baixas) */
+  #quem { height: auto; }
+  #quem .palco { position: relative; height: auto; min-height: 100svh; overflow: visible; grid-template-rows: auto auto; padding-bottom: 40px; }
+  .hud { display: none; }
   #quem .hero-video { order: -1; }
   .hero-quadro { height: min(52vh, 118vw); }
   .contato { grid-template-columns: 1fr; justify-items: center; align-content: center; text-align: center; gap: 18px; padding-top: 70px; }
